@@ -175,13 +175,13 @@
 .shown {
     justify-content: space-around;
     margin: 40px 100px;
-    transition: all 0.5s ease-out;
+    transition: all 0.1s ease;
     display: flex;
     align-items: center;
 }
 
 .hidden {
-    transform: perspective(1000px) rotateX(50deg);
+    transition: all 0.1s ease;
     display: none;
 }
 
