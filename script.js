@@ -1,3 +1,9 @@
+var checkboxes = $(".options").children().children();
+for (let index = 0; index < checkboxes.length; index++) {
+    var checkbox = checkboxes[index];
+    if (checkbox.checked) checkbox.checked = false;
+}
+
 $(".package").on("click", function(e) {
     $(".hidden").toggle(300);
 })
@@ -18,7 +24,7 @@ $(".plus").on("click", function(ev) {
 
 })
 
-function update() {
+function update(addition=data) {
     var noOfBedrooms, noOfBathrooms, container = $("#rooms").children();
     noOfBedrooms = container.eq(2).text();
     noOfBathrooms = container.eq(6).text();
@@ -44,7 +50,39 @@ function update() {
     } else {
         bathroomCost = "119";
     }
-
-    var totalCost = eval(bedroomCost + "+" + bathroomCost);
+    var totalCost = eval(bedroomCost + "+" + bathroomCost + "+" + addition);
     $("#total").text(totalCost);
 }
+
+$(".show-options").on("click", function() {
+    $(".options").toggle();
+})
+
+var data = "0";
+$("#btn").on("click", function() {
+    
+    var checkboxes = $(".options").children().children(), newEles = [], prices = [];
+    for (let index = 0; index < checkboxes.length; index++) {
+        var checkbox = checkboxes[index];
+        if (checkbox.checked) {
+            checkbox = $(checkbox);
+            var newEle = '<p style="margin:20px 0px;">'+checkbox.attr("name")+'<span2 id="valueD2"> $ '+checkbox.attr("value")+'</span> </p>';
+            newEles.push(newEle);
+            prices.push(checkbox.attr("value"));
+        }
+    }
+
+    if (prices) prices = prices.join("+");
+    else prices = "0"
+
+    $(".optional-ele").html("");
+    for (let index = 0; index < newEles.length; index++) {
+        var element = newEles[index];
+        $(".optional-ele").append(element);
+    }
+
+    data = prices;
+    update(data);
+
+    $(".options").css("display", "none");
+})

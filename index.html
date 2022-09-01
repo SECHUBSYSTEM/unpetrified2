@@ -17,6 +17,7 @@
                     Summary</h2>
                 <p style="margin:20px 0px;">Number of bedrooms: <span1 id="valueD">0</span> </p>
                 <p style="margin:20px 0px;">Number of bathrooms: <span2 id="valueD2">0</span> </p>
+                <div class="optional-ele"></div>    
                 <div>
                     <h1
                         style="margin:70px 10px 0 0;font-size: 18px;font-weight: 600;text-decoration-line: overline; color:rgb(226, 193, 6, 0.9);width:100%;">
@@ -49,9 +50,9 @@
                             <div class="plus" style="padding:7px 10px;border-radius:50%; outline:none; border:0px solid;margin: 0 -10px; font-weight: 700;font-size: 14px;cursor: pointer; background:rgb(201, 174, 17);">
                                 +</div>
                         </div>
-                        <div class="options" style="margin: 50px 0; align-items:center;text-align:center; ">
-                            <h2 style="text-align:center;text-decoration:underline; color: rgb(5, 31, 40);">Optional
-                                Extras</h2>
+                        
+                        <h2 class="show-options" style="text-align:center; background:rgb(201,174,17);color:rgb(5,31,40); cursor: pointer;">Optional Extras</h2>
+                        <div class="options" style="margin: 50px 0; align-items:center;text-align:center; display: none;">
                             <div
                                 style="display:flex; margin:40px 15px;font-weight: 600; align-items: center; text-align: center;justify-content: center;">
                                 <input style="margin: 0 5px 0 5px; padding:0 10px; cursor: pointer;" type="checkbox"
@@ -64,10 +65,9 @@
                             <div
                                 style="display:flex; margin:40px 15px;font-weight: 600;align-items: center; text-align: center;justify-content: center;">
                                 <input style="margin: 0 5px 0 5px;  padding:0 10px; cursor: pointer;" type="checkbox"
-                                    value="80" name="without carpet">Additional
-                                Bathroom
-                                <input style="margin: 0 5px 0 85px; cursor: pointer;" type="checkbox" value="-60"
-                                    name="additional bathroom">Without Carpet
+                                    value="-60" name="without carpet">Without Carpet
+                                <input style="margin: 0 5px 0 85px; cursor: pointer;" type="checkbox" value="80"
+                                    name="additional bathroom">Additional Bathroom
                             </div>
                             <button id="btn"
                                 style="padding: 8px 8px; outline:none;background:rgba(1, 23, 30);border:0px solid; color:#fff;border-radius:6px; font-weight:600;cursor:pointer;">Add
