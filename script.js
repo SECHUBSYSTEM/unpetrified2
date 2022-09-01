@@ -30,6 +30,8 @@ function update() {
     if (parseInt(noOfBedrooms) > 1) {
         var bedroomNet = eval(noOfBedrooms+"-1");
         bedroomCost = eval("190+"+bedroomNet+"*100");
+    } else if (parseInt(noOfBedrooms) == 0) {
+        bedroomCost = "0";
     } else {
         bedroomCost = "190";
     }
@@ -37,6 +39,8 @@ function update() {
     if (parseInt(noOfBathrooms) > 1) {
         var bathroomNet = eval(noOfBathrooms+"-1");
         bathroomCost = eval("119+"+bathroomNet+"*80");
+    } else if (parseInt(noOfBathrooms) == 0) {
+        bathroomCost = "0";
     } else {
         bathroomCost = "119";
     }
